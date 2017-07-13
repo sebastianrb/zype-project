@@ -1,0 +1,37 @@
+.header {
+    margin-bottom: 15%;
+}
+
+.header__title-container {
+    @include flex-row(wrap, space-around, center);
+}
+
+.header__title {
+    font-size: 2.5em;
+    float: right;
+
+    @include mediaQuery($breakpoint-850) {
+        font-size: 2.2em;
+        float: none;
+        width: 100%;
+    };
+
+    @include mediaQuery($breakpoint-650) {
+        font-size: 2em;
+    };
+
+    @include mediaQuery($breakpoint-500) {
+        font-size: 1.7em;
+    };
+}
+
+.header__logo {
+    float: left;
+    width: 13%;
+
+    @include mediaQuery($breakpoint-850) {
+        float: none;
+        width: 20%;
+        min-width: 100px;
+    };
+}

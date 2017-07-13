@@ -1,0 +1,19 @@
+@mixin flex-row($wrap, $justify, $align) {
+    display: flex;
+    flex-flow: row $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin flex-column($wrap, $justify, $align) {
+    display: flex;
+    flex-flow: column $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin mediaQuery($breakpoint) {
+    @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
