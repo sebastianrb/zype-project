@@ -1,0 +1,29 @@
+// $mobileBreakpoint:
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    max-width: 1500px;
+    font-size: 1.1em;
+    font-family: "Roboto", Arial;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+main {
+    max-width: 800px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

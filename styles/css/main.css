@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box; }
+
+body,
+html {
+  height: 100%;
+  width: 100%; }
+
+body {
+  max-width: 1500px;
+  font-size: 1.1em;
+  font-family: "Roboto", Arial;
+  margin: 0 auto;
+  overflow-x: hidden; }
+
+main {
+  max-width: 800px; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+body {
+  padding-top: 440px; }
+
+.parallax-background {
+  /*background: url("./10436-NMJ3BL.jpg") repeat;*/
+  /*background-size: 100%; this works*/
+  /*background-size: contain;*/
+  position: absolute;
+  width: auto;
+  height: 140%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  background-size: contain;
+  overflow: hidden; }
+
+.parallax-background img {
+  width: auto;
+  display: block;
+  height: 100%; }
+
+.mountain {
+  background-image: url("http://static.thousandwonders.net/Neist.Point.original.966.jpg");
+  background-repeat: no-repeat; }
+
+.lake {
+  background-image: url("http://jonvilma.com/images/lake-4.jpg");
+  background-repeat: no-repeat; }
+
+.forest {
+  background-image: url("https://static.pexels.com/photos/38136/pexels-photo-38136.jpeg");
+  background-repeat: no-repeat; }
+
+.scotland {
+  background-image: url("https://photos.smugmug.com/Europe/Scotland/i-PShzzPJ/0/XL/skye-old-man-of-storr-XL.jpg");
+  background-repeat: no-repeat; }
+
+.parallax-container {
+  width: 800px;
+  height: 450px;
+  position: relative;
+  margin: 50px auto;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center; }
+
+.parallax-foreground {
+  color: #fff;
+  font-family: arial;
+  width: 250px;
+  height: auto;
+  margin: auto;
+  line-height: 20px;
+  font-size: 16px;
+  padding: 20px;
+  background: black; }
+
+.parallax-foreground__caption {
+  height: auto;
+  width: 100%;
+  text-align: center; }
