@@ -14,6 +14,7 @@ var runSequence = require('run-sequence');
 var watch = require('gulp-watch');
 var browserSync = require('browser-sync').create();
 var autoprefixer = require('gulp-autoprefixer');
+var babel = require('gulp-babel');
 
 
 // browsersync
@@ -35,6 +36,7 @@ gulp.task('clean', function () {
 //lint and uglify js
 gulp.task('scripts', function () {
   return gulp.src(["./js/*.js"])
+    .pipe(babel())
     .pipe(concat('main.js'))
     .pipe(jshint())
     .pipe(jshint.reporter('default', {

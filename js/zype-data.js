@@ -1,42 +1,59 @@
 (function() {
-    $(document).ready(function() {
-        var url = "https://api.zype.com/videos/?api_key=H7CF2IHbEc6QIrMVwb2zfd9VI14HHGAfYax1eHEUsJ4voYuqWF2oWvByUOhERva_";
-        var ajaxList = document.querySelector(".ajax-target-list");
-        var parallaxBackgrounds = Array.from(document.querySelectorAll(".parallax-background"));
-        var parallaxBackgroundImages = Array.from(document.querySelectorAll(".parallax-background img"));
-        var captions = Array.from(document.querySelectorAll(".parallax-foreground__caption"));
 
-        //ajax call
-        $.getJSON(url)
+    var url = "https://api.zype.com/videos/?api_key=H7CF2IHbEc6QIrMVwb2zfd9VI14HHGAfYax1eHEUsJ4voYuqWF2oWvByUOhERva_";
+    var ajaxList = document.querySelector(".ajax-target-list");
+    var parallaxBackgrounds = Array.from(document.querySelectorAll(".parallax-background"));
+    var parallaxBackgroundImages = Array.from(document.querySelectorAll(".parallax-background img"));
+    var videoList = document.querySelector(".main-content__video-list");
+    var loader = document.querySelector(".loading-placeholder");
 
-        .done(function(data) {
-            var videoArray = data.response;
-            var videoThumbnails = [];
-            var videoTitles = [];
+    //ajax call
+    $.getJSON(url)
 
-            //get video thumbnails and titles
-            for(var i = 0; i < videoArray.length; i++) {
-                videoTitles.push(videoArray[i].title);
-                videoThumbnails.push(videoArray[i].thumbnails[3].url);
-            }
+    .done(function(data) {
+        var videoArray = data.response;
+        console.log(videoArray);
+        var videoThumbnails = [];
+        var videoTitles = [];
 
-            console.log(videoThumbnails);
+        //get video thumbnails and titles
+        for(var i = 0; i < videoArray.length; i++) {
+            var title = videoArray[i].title;
+            var url = (i !== 1 ? videoArray[i].thumbnails[3].url : "./dest/images/placeholder-image.jpg");
 
-            //populate titles and thumbnail href attributes
-            parallaxBackgroundImages.forEach( function(element, index) {
-                element.setAttribute("src", videoThumbnails[index]);
-            });
+            var listItem = `
+                <li class='main-content__video'>
+                    <div class="main-content__video-image-container">
+                        <div class="parallax-container">
+                            <div class="parallax-background">
+                              <img src="${url}" alt="video-thumbnail">
+                            </div>
+                            <div class="parallax-foreground foreground-title">
+                              <p class="parallax-foreground__caption">${title}</p>
+                            </div>
+                            <div class="parallax-foreground foreground-play">
+                              <i class="fa fa-play" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="main-content__video-info-button">Go To Video</button>
+                </li>
+            `;
 
-            captions.forEach( function(element, index) {
-                element.textContent = videoTitles[index];
-            });
+            //inject list items into DOM with relevant data
+            loader.remove();
+            videoList.innerHTML += listItem;
 
-            //remove loading tiles
-        })
+            //initialize parallax
+            window.initializeParallax();
+        }
 
-        .fail(function() {
-          console.log("Fail!");
-        });
+
+        //remove loading tiles
+    })
+
+    .fail(function() {
+      console.log("Fail!");
     });
 
 })();

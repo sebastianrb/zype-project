@@ -11,30 +11,122 @@ body {
   font-size: 1.1em;
   font-family: "Roboto", Arial;
   margin: 0 auto;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  background: radial-gradient(circle, white, rgba(181, 181, 181, 0.3));
+  color: #2696c6; }
 
 main {
-  max-width: 800px; }
+  max-width: 850px; }
+  @media screen and (max-width: 900px) {
+    main {
+      max-width: none; } }
 
 ul {
   margin: 0;
   padding: 0;
   list-style: none; }
 
-body {
-  padding-top: 440px; }
+.site-container {
+  max-width: 850px;
+  width: 90%;
+  margin: 60px auto;
+  text-align: center;
+  padding: 30px; }
+  @media screen and (max-width: 900px) {
+    .site-container {
+      padding: 0;
+      margin: 60px 0;
+      width: 100%;
+      max-width: none; } }
+
+.header {
+  margin-bottom: 15%; }
+
+.header__title-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center; }
+
+.header__title {
+  font-size: 2.5em;
+  float: right; }
+  @media screen and (max-width: 850px) {
+    .header__title {
+      font-size: 2.2em;
+      float: none;
+      width: 100%; } }
+  @media screen and (max-width: 650px) {
+    .header__title {
+      font-size: 2em; } }
+  @media screen and (max-width: 500px) {
+    .header__title {
+      font-size: 1.7em; } }
+
+.header__logo {
+  float: left;
+  width: 13%; }
+  @media screen and (max-width: 850px) {
+    .header__logo {
+      float: none;
+      width: 20%;
+      min-width: 100px; } }
+
+.main-content__video-list {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  background: rgba(38, 150, 198, 0.1);
+  box-shadow: 0 0 10px 0px rgba(128, 128, 128, 0.5) inset;
+  padding: 50px 0;
+  position: relative; }
+
+.main-content__video {
+  width: 100%;
+  border-radius: 4px;
+  padding: 20px 60px;
+  margin: 15px 0 0;
+  max-width: 790px; }
+  @media screen and (max-width: 750px) {
+    .main-content__video {
+      padding: 20px 15px; } }
+
+.main-content__video-image-container {
+  width: 100%; }
+
+.main-content__video-info-container {
+  width: 100%;
+  padding: 50px 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center; }
+
+.main-content__video-info-button {
+  width: 75%;
+  margin: 20px 0 0;
+  border: none;
+  padding: 20px;
+  background: rgba(1, 1, 56, 0.4);
+  color: white;
+  font-size: 1em;
+  min-width: 300px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: none; }
+  .main-content__video-info-button:hover {
+    background: rgba(1, 1, 56, 0.6); }
 
 .parallax-background {
-  /*background: url("./10436-NMJ3BL.jpg") repeat;*/
-  /*background-size: 100%; this works*/
-  /*background-size: contain;*/
   position: absolute;
   width: auto;
-  height: 140%;
+  height: 125%;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  z-index: -1;
   background-size: contain;
   overflow: hidden; }
 
@@ -43,45 +135,74 @@ body {
   display: block;
   height: 100%; }
 
-.mountain {
-  background-image: url("http://static.thousandwonders.net/Neist.Point.original.966.jpg");
-  background-repeat: no-repeat; }
-
-.lake {
-  background-image: url("http://jonvilma.com/images/lake-4.jpg");
-  background-repeat: no-repeat; }
-
-.forest {
-  background-image: url("https://static.pexels.com/photos/38136/pexels-photo-38136.jpeg");
-  background-repeat: no-repeat; }
-
-.scotland {
-  background-image: url("https://photos.smugmug.com/Europe/Scotland/i-PShzzPJ/0/XL/skye-old-man-of-storr-XL.jpg");
-  background-repeat: no-repeat; }
-
 .parallax-container {
-  width: 800px;
+  width: auto;
   height: 450px;
   position: relative;
-  margin: 50px auto;
   overflow: hidden;
+  border-radius: 4px; }
+
+.parallax-foreground {
+  position: absolute;
+  opacity: .9; }
+
+.parallax-foreground.foreground-play {
+  bottom: 40px;
+  right: 40px;
+  width: 55px;
+  height: 55px;
+  font-size: 1.8em;
+  border: 7px solid;
+  border-radius: 50%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  color: #2696c6;
+  transition: all 0.2s;
+  cursor: pointer;
+  background: white;
+  opacity: .8; }
+  .parallax-foreground.foreground-play:hover {
+    transform: scale(1.1);
+    opacity: 1; }
 
-.parallax-foreground {
+i.fa.fa-play {
+  color: inherit;
+  margin-right: -5px; }
+
+.parallax-foreground.foreground-title {
   color: #fff;
-  font-family: arial;
-  width: 250px;
+  width: auto;
   height: auto;
   margin: auto;
   line-height: 20px;
-  font-size: 16px;
+  font-size: .9em;
   padding: 20px;
-  background: black; }
+  background: linear-gradient(to bottom, #2696c6 0%, #29b2c4 100%);
+  top: 0;
+  left: 0;
+  max-width: 300px;
+  border-bottom-right-radius: 3px; }
+  @media screen and (max-width: 750px) {
+    .parallax-foreground.foreground-title {
+      width: 100%;
+      max-width: none;
+      border-bottom-right-radius: 0; } }
 
 .parallax-foreground__caption {
   height: auto;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  margin: 0; }
+
+.loading-placeholder {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 20px;
+  width: 100px;
+  height: 100px; }
+  .loading-placeholder img {
+    width: 100%; }
