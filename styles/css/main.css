@@ -29,7 +29,7 @@ ul {
 .site-container {
   max-width: 850px;
   width: 90%;
-  margin: 60px auto;
+  margin: 70px auto;
   text-align: center;
   padding: 30px; }
   @media screen and (max-width: 900px) {
@@ -50,7 +50,8 @@ ul {
 
 .header__title {
   font-size: 2.5em;
-  float: right; }
+  float: right;
+  font-weight: 800; }
   @media screen and (max-width: 850px) {
     .header__title {
       font-size: 2.2em;
@@ -65,7 +66,8 @@ ul {
 
 .header__logo {
   float: left;
-  width: 13%; }
+  width: 15%;
+  max-width: 150px; }
   @media screen and (max-width: 850px) {
     .header__logo {
       float: none;
@@ -149,8 +151,8 @@ ul {
 .parallax-foreground.foreground-play {
   bottom: 40px;
   right: 40px;
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   font-size: 1.8em;
   border: 7px solid;
   border-radius: 50%;
@@ -163,9 +165,19 @@ ul {
   cursor: pointer;
   background: white;
   opacity: .8; }
+  @media screen and (max-width: 850px) {
+    .parallax-foreground.foreground-play {
+      width: 68px;
+      height: 68px;
+      right: 50%;
+      transform: translateX(50%) scale(1); } }
   .parallax-foreground.foreground-play:hover {
     transform: scale(1.1);
     opacity: 1; }
+    @media screen and (max-width: 850px) {
+      .parallax-foreground.foreground-play:hover {
+        transform: translateX(50%) scale(1);
+        opacity: .8; } }
 
 i.fa.fa-play {
   color: inherit;

@@ -89,8 +89,8 @@
 .parallax-foreground.foreground-play {
   bottom: 40px;
   right: 40px;
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   font-size: 1.8em;
   border: 7px solid;
   border-radius: 50%;
@@ -101,9 +101,21 @@
   background: white;
   opacity: .8;
 
+  @include mediaQuery($breakpoint-850) {
+    width: 68px;
+    height: 68px;
+    right: 50%;
+    transform: translateX(50%) scale(1);
+  };
+
   &:hover {
     transform: scale(1.1);
     opacity: 1;
+
+    @include mediaQuery($breakpoint-850) {
+      transform: translateX(50%) scale(1);
+      opacity: .8;
+    };
   }
 }
 
