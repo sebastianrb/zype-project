@@ -2,6 +2,7 @@
 
 * {
     box-sizing: border-box;
+    outline: none;
 }
 
 body,
@@ -19,6 +20,7 @@ body {
     background: $site-background;
     // color: transparentize($primary-color, .2);
     color: $zype-color;
+    border-top: 5px solid $zype-color;
 }
 
 main {
@@ -38,13 +40,13 @@ ul {
 .site-container {
     max-width: $max-content-width;
     width: 90%;
-    margin: 70px auto;
+    margin: 75px auto;
     text-align: center;
     padding: 30px;
 
     @include mediaQuery($breakpoint-900) {
         padding: 0;
-        margin: 60px 0;
+        margin: 75px 0;
         width: 100%;
         max-width: none;
     };

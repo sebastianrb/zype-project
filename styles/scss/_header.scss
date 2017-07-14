@@ -1,8 +1,9 @@
 .header {
     margin-bottom: 15%;
+    margin-top: 20px;
     background: white;
     box-shadow: $standard-box-shadow-outset;
-    @include mediaQuery($breakpoint-850) {
+    @include mediaQuery($breakpoint-900) {
         background: transparent;
         box-shadow: none;
     };

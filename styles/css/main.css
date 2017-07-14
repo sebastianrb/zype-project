@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  outline: none; }
 
 body,
 html {
@@ -13,10 +14,11 @@ body {
   margin: 0 auto;
   overflow-x: hidden;
   background: radial-gradient(circle, white, rgba(181, 181, 181, 0.3));
-  color: #2696c6; }
+  color: #2696c6;
+  border-top: 5px solid #2696c6; }
 
 main {
-  max-width: 850px; }
+  max-width: 865px; }
   @media screen and (max-width: 900px) {
     main {
       max-width: none; } }
@@ -27,23 +29,111 @@ ul {
   list-style: none; }
 
 .site-container {
-  max-width: 850px;
+  max-width: 865px;
   width: 90%;
-  margin: 70px auto;
+  margin: 75px auto;
   text-align: center;
   padding: 30px; }
   @media screen and (max-width: 900px) {
     .site-container {
       padding: 0;
-      margin: 60px 0;
+      margin: 75px 0;
       width: 100%;
       max-width: none; } }
 
+.parallax-background {
+  position: absolute;
+  width: auto;
+  height: 125%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-size: contain;
+  overflow: hidden; }
+
+.parallax-background img {
+  width: auto;
+  display: block;
+  height: 100%; }
+
+.parallax-container {
+  width: auto;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px; }
+
+.parallax-foreground {
+  position: absolute;
+  opacity: .9; }
+
+.parallax-foreground.foreground-play {
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  font-size: 1.6em;
+  border: 7px solid;
+  border-radius: 50%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  color: #2696c6;
+  transition: all 0.2s;
+  cursor: pointer;
+  background: white;
+  opacity: .8; }
+  @media screen and (max-width: 850px) {
+    .parallax-foreground.foreground-play {
+      width: 68px;
+      height: 68px;
+      right: 50%;
+      transform: translateX(50%) scale(1); } }
+  .parallax-foreground.foreground-play:hover {
+    transform: scale(1.1);
+    opacity: 1; }
+    @media screen and (max-width: 850px) {
+      .parallax-foreground.foreground-play:hover {
+        transform: translateX(50%) scale(1);
+        opacity: .8; } }
+
+i.fa.fa-play {
+  color: inherit;
+  margin-right: -5px; }
+
+.parallax-foreground.foreground-title {
+  color: #fff;
+  width: auto;
+  height: auto;
+  margin: auto;
+  line-height: 20px;
+  font-size: 1em;
+  padding: 20px;
+  background: linear-gradient(to bottom, #2696c6 0%, #29b2c4 100%);
+  top: 0;
+  left: 0;
+  max-width: 300px;
+  border-bottom-right-radius: 3px;
+  font-weight: 900; }
+  @media screen and (max-width: 750px) {
+    .parallax-foreground.foreground-title {
+      width: 100%;
+      max-width: none;
+      border-bottom-right-radius: 0; } }
+
+.parallax-foreground__caption {
+  height: auto;
+  width: 100%;
+  text-align: center;
+  margin: 0; }
+
 .header {
   margin-bottom: 15%;
+  margin-top: 20px;
   background: white;
   box-shadow: 0 0 10px 0px rgba(128, 128, 128, 0.5); }
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 900px) {
     .header {
       background: transparent;
       box-shadow: none; } }
@@ -88,7 +178,7 @@ ul {
   margin: 30px 0;
   background: rgba(38, 150, 198, 0.1);
   box-shadow: 0 0 10px 0px rgba(128, 128, 128, 0.5) inset;
-  padding: 50px 0;
+  padding: 50px 0 75px;
   position: relative; }
 
 .main-content__video {
@@ -112,107 +202,22 @@ ul {
   justify-content: center;
   align-items: center; }
 
-.main-content__video-info-button {
+.main-content__video-info-button,
+.load-more-button {
   width: 75%;
   margin: 20px 0 0;
   border: none;
   padding: 20px;
-  background: rgba(1, 1, 56, 0.4);
+  background: #c1d52f;
   color: white;
   font-size: 1em;
   min-width: 300px;
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.2s;
-  display: none; }
-  .main-content__video-info-button:hover {
-    background: rgba(1, 1, 56, 0.6); }
-
-.parallax-background {
-  position: absolute;
-  width: auto;
-  height: 125%;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-size: contain;
-  overflow: hidden; }
-
-.parallax-background img {
-  width: auto;
-  display: block;
-  height: 100%; }
-
-.parallax-container {
-  width: auto;
-  height: 450px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 4px; }
-
-.parallax-foreground {
-  position: absolute;
-  opacity: .9; }
-
-.parallax-foreground.foreground-play {
-  bottom: 40px;
-  right: 40px;
-  width: 60px;
-  height: 60px;
-  font-size: 1.8em;
-  border: 7px solid;
-  border-radius: 50%;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  color: #2696c6;
-  transition: all 0.2s;
-  cursor: pointer;
-  background: white;
-  opacity: .8; }
-  @media screen and (max-width: 850px) {
-    .parallax-foreground.foreground-play {
-      width: 68px;
-      height: 68px;
-      right: 50%;
-      transform: translateX(50%) scale(1); } }
-  .parallax-foreground.foreground-play:hover {
-    transform: scale(1.1);
-    opacity: 1; }
-    @media screen and (max-width: 850px) {
-      .parallax-foreground.foreground-play:hover {
-        transform: translateX(50%) scale(1);
-        opacity: .8; } }
-
-i.fa.fa-play {
-  color: inherit;
-  margin-right: -5px; }
-
-.parallax-foreground.foreground-title {
-  color: #fff;
-  width: auto;
-  height: auto;
-  margin: auto;
-  line-height: 20px;
-  font-size: .9em;
-  padding: 20px;
-  background: linear-gradient(to bottom, #2696c6 0%, #29b2c4 100%);
-  top: 0;
-  left: 0;
-  max-width: 300px;
-  border-bottom-right-radius: 3px; }
-  @media screen and (max-width: 750px) {
-    .parallax-foreground.foreground-title {
-      width: 100%;
-      max-width: none;
-      border-bottom-right-radius: 0; } }
-
-.parallax-foreground__caption {
-  height: auto;
-  width: 100%;
-  text-align: center;
-  margin: 0; }
+  transition: all 0.2s; }
+  .main-content__video-info-button:hover,
+  .load-more-button:hover {
+    background: #2696c6; }
 
 .loading-placeholder {
   position: absolute;
@@ -224,3 +229,24 @@ i.fa.fa-play {
   height: 100px; }
   .loading-placeholder img {
     width: 100%; }
+
+.top-button {
+  height: 45px;
+  width: 55px;
+  position: fixed;
+  bottom: 30px;
+  right: -100px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  background: #f9f9f9;
+  z-index: 100;
+  box-shadow: 1px 1px 2px 0 #d3d3d3;
+  transition: all .3s;
+  cursor: pointer; }
+  .top-button img {
+    width: 40%; }
+
+.top-button.shown {
+  right: 30px; }

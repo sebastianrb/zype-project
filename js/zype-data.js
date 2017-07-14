@@ -36,7 +36,6 @@
                             </div>
                         </div>
                     </div>
-                    <button class="main-content__video-info-button">Go To Video</button>
                 </li>
             `;
 

@@ -1,0 +1,97 @@
+//parallax styles
+.parallax-background {
+  position: absolute;
+  width: auto;
+  height: 125%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-size: contain;
+  overflow: hidden;
+}
+
+.parallax-background img {
+  width: auto;
+  display: block;
+  height: 100%
+}
+
+.parallax-container {
+    width: auto;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    border-radius: $standard-border-radius;
+}
+
+.parallax-foreground {
+  position: absolute;
+  opacity: .9;
+}
+
+.parallax-foreground.foreground-play {
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  font-size: 1.6em;
+  border: 7px solid;
+  border-radius: 50%;
+  @include flex-column(nowrap, center, center);
+  color: $zype-color;
+  transition: $standard-transition;
+  cursor: pointer;
+  background: white;
+  opacity: .8;
+
+  @include mediaQuery($breakpoint-850) {
+    width: 68px;
+    height: 68px;
+    right: 50%;
+    transform: translateX(50%) scale(1);
+  };
+
+  &:hover {
+    transform: scale(1.1);
+    opacity: 1;
+
+    @include mediaQuery($breakpoint-850) {
+      transform: translateX(50%) scale(1);
+      opacity: .8;
+    };
+  }
+}
+
+i.fa.fa-play {
+    color: inherit;
+    margin-right: -5px;
+}
+
+.parallax-foreground.foreground-title {
+  color: #fff;
+  width: auto;
+  height: auto;
+  margin: auto;
+  line-height: 20px;
+  font-size: 1em;
+  padding: 20px;
+  background: $zype-gradient;
+  top: 0;
+  left: 0;
+  max-width: 300px;
+  border-bottom-right-radius: 3px;
+  font-weight: 900;
+
+  @include mediaQuery($breakpoint-750) {
+    width: 100%;
+    max-width: none;
+    border-bottom-right-radius: 0;
+  };
+}
+
+.parallax-foreground__caption {
+  height: auto;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
