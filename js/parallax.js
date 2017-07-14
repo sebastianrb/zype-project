@@ -42,8 +42,18 @@
             } else {
                 topButton.classList.remove("shown");
             }
+
+            if(scrolled === 0) {
+                resetTops();
+            }
         }
 
+        //event handler for top button
+        topButton.addEventListener("click", function(event) {
+            $("html, body").stop(true, false).animate({ scrollTop: 0 }, 500, function() {
+                resetTops();
+            });
+        });
 
         //helper functions
         function makeSectionOffsetObject(sections) {
@@ -54,12 +64,14 @@
             return offsetObject;
         }
 
-        //event handler for top button
-        topButton.addEventListener("click", function(event) {
-            $("html, body").stop(true, false).animate({ scrollTop: 0 }, 500);
-        });
+        function resetTops() {
+            parallaxBackgrounds.forEach( function(element, index) {
+                $(element).css("top", "-1px");
+            });
+        }
     }
 
+    //expose parallax function
     window.initializeParallax = initializeParallax;
 
 })();

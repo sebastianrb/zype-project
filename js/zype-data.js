@@ -12,7 +12,6 @@
 
     .done(function(data) {
         var videoArray = data.response;
-        console.log(videoArray);
         var videoThumbnails = [];
         var videoTitles = [];
 
