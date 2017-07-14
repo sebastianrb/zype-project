@@ -1,10 +1,19 @@
 //parallax styles
+
+.parallax-container {
+    width: auto;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    border-radius: $standard-border-radius;
+}
+
 .parallax-background {
   position: absolute;
   width: auto;
   height: 125%;
   top: -1px;
-  left: 50%;
+  left: 53%;
   transform: translateX(-50%);
   background-size: contain;
   overflow: hidden;
@@ -14,14 +23,6 @@
   width: auto;
   display: block;
   height: 100%
-}
-
-.parallax-container {
-    width: auto;
-    height: 450px;
-    position: relative;
-    overflow: hidden;
-    border-radius: $standard-border-radius;
 }
 
 .parallax-foreground {

@@ -18,7 +18,7 @@ body {
   border-top: 5px solid #2696c6; }
 
 main {
-  max-width: 865px; }
+  max-width: 880px; }
   @media screen and (max-width: 900px) {
     main {
       max-width: none; } }
@@ -29,24 +29,31 @@ ul {
   list-style: none; }
 
 .site-container {
-  max-width: 865px;
+  max-width: 880px;
   width: 90%;
   margin: 75px auto 0;
   text-align: center;
-  padding: 30px 30px 75px; }
+  padding: 30px 30px 80px; }
   @media screen and (max-width: 900px) {
     .site-container {
-      padding: 0 0 75px;
-      margin: 75px 0 0;
+      padding: 0 0 90px;
+      margin: 80px 0 0;
       width: 100%;
       max-width: none; } }
+
+.parallax-container {
+  width: auto;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px; }
 
 .parallax-background {
   position: absolute;
   width: auto;
   height: 125%;
   top: -1px;
-  left: 50%;
+  left: 53%;
   transform: translateX(-50%);
   background-size: contain;
   overflow: hidden; }
@@ -55,13 +62,6 @@ ul {
   width: auto;
   display: block;
   height: 100%; }
-
-.parallax-container {
-  width: auto;
-  height: 450px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 4px; }
 
 .parallax-foreground {
   position: absolute;
@@ -234,6 +234,13 @@ i.fa.fa-play {
   height: 100px; }
   .loading-placeholder img {
     width: 100%; }
+
+.loading-error-message {
+  padding: 2% 3% 0;
+  font-weight: 800;
+  line-height: 27px;
+  color: #bd0404;
+  font-size: 1.05em; }
 
 .top-button {
   height: 45px;

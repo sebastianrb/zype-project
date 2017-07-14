@@ -1,6 +1,9 @@
 (function() {
 
-    var url = "https://api.zype.com/videos/?api_key=H7CF2IHbEc6QIrMVwb2zfd9VI14HHGAfYax1eHEUsJ4voYuqWF2oWvByUOhERva_";
+    "use strict";
+
+    //initialize variables
+    var apiURL = "https://api.zype.com/videos/?api_key=H7CF2IHbEc6QIrMVwb2zfd9VI14HHGAfYax1eHEUsJ4voYuqWF2oWvByUOhERva_";
     var ajaxList = document.querySelector(".ajax-target-list");
     var parallaxBackgrounds = Array.from(document.querySelectorAll(".parallax-background"));
     var parallaxBackgroundImages = Array.from(document.querySelectorAll(".parallax-background img"));
@@ -8,18 +11,22 @@
     var loader = document.querySelector(".loading-placeholder");
 
     //ajax call
-    $.getJSON(url)
+    $.getJSON(apiURL)
 
     .done(function(data) {
-        var videoArray = data.response;
-        var videoThumbnails = [];
-        var videoTitles = [];
+        //handle success scenario
 
-        //get video thumbnails and titles
+        //store video array
+        var videoArray = data.response;
+
+        //get video thumbnails and titles, and construct HTML template
         for(var i = 0; i < videoArray.length; i++) {
+
+            //titles and thumbnail URLs
             var title = videoArray[i].title;
             var url = (i !== 1 ? videoArray[i].thumbnails[4].url : "./dest/images/placeholder-image.jpg");
 
+            //HTML template using template literal
             var listItem = `
                 <li class='main-content__video'>
                     <div class="main-content__video-image-container">
@@ -42,14 +49,17 @@
             loader.remove();
             videoList.innerHTML += listItem;
 
-            //initialize parallax
+            //initialize parallax after DOM has been constructed
             window.initializeParallax();
+
         }
 
     })
 
     .fail(function() {
-      console.log("Fail!");
+        //handle error scenario
+        console.log("Failed to load data from the API.");
+        videoList.innerHTML = `<p class="loading-error-message">Sorry, we were unable to load the video data. Please refresh the page to try again.</p>`;
     });
 
 })();

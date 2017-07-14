@@ -1,34 +1,32 @@
 (function() {
+
     "use strict";
 
     function initializeParallax() {
+        //initialize variables
         var scrollOffset = 400;
         var parallaxUntil = 220;
         var parallaxSpeed = 0.18;
-        var initialOffset = 20;
         var factor = parallaxSpeed * scrollOffset;
         var parallaxContainers = Array.from(document.querySelectorAll(".parallax-container"));
         var parallaxBackgrounds = Array.from(document.querySelectorAll(".parallax-background"));
         var topButton = document.querySelector(".top-button");
         var topButtonOffset = 200;
-        //set initial top offsets
-        parallaxBackgrounds.forEach( function(element, index) {
-            // element.style.top = (-scrollOffset * parallaxSpeed) + "px";
-            // element.style.top = factor + "px";
-            // element.style.top = -initialOffset + "px";
-        });
 
-
-        window.addEventListener("scroll", parallax)
+        //set parallax event handler on page scroll
+        window.addEventListener("scroll", parallax);
 
         function parallax(event) {
 
+            //get scroll amount
             var scrolled = $(window).scrollTop();
 
-            //don't start parallax movement until user has scrolled to div
-            var offsetObject = makeSectionOffsetObject(parallaxContainers);
-            // console.log(offsetObject);
+            //don't start parallax movement until user has scrolled to a specific video
 
+            //get top offsets of each video
+            var offsetObject = makeSectionOffsetObject(parallaxContainers);
+
+            //apply parallax effect to relevant video on page scroll
             for(var i = 0; i < parallaxContainers.length; i++) {
                 if( offsetObject[i] - scrolled < scrollOffset && offsetObject[i] - scrolled > -parallaxUntil) {
                     // $(parallaxContainers[i]).find(".parallax-background").css('top',((scrolled - $(parallaxContainers[i]).offset().top)*parallaxSpeed)+'px');
@@ -43,6 +41,7 @@
                 topButton.classList.remove("shown");
             }
 
+            //if user is at top of page, reset video top offsets to control for small discrepencies
             if(scrolled === 0) {
                 resetTops();
             }
@@ -71,7 +70,7 @@
         }
     }
 
-    //expose parallax function
+    //expose parallax initialization function to rest of application
     window.initializeParallax = initializeParallax;
 
 })();
