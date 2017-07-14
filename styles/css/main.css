@@ -121,6 +121,10 @@ i.fa.fa-play {
       width: 100%;
       max-width: none;
       border-bottom-right-radius: 0; } }
+  @media screen and (max-width: 600px) {
+    .parallax-foreground.foreground-title {
+      padding: 15px;
+      font-size: .95em; } }
 
 .parallax-foreground__caption {
   height: auto;

@@ -87,6 +87,11 @@ i.fa.fa-play {
     max-width: none;
     border-bottom-right-radius: 0;
   };
+
+  @include mediaQuery($breakpoint-600) {
+    padding: 15px;
+    font-size: .95em;
+  };
 }
 
 .parallax-foreground__caption {
