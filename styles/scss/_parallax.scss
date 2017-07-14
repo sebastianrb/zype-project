@@ -45,8 +45,8 @@
   opacity: .8;
 
   @include mediaQuery($breakpoint-850) {
-    width: 68px;
-    height: 68px;
+    width: 65px;
+    height: 65px;
     right: 50%;
     transform: translateX(50%) scale(1);
   };

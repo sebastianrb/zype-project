@@ -15,6 +15,7 @@
     padding: 20px 60px;
     margin: 15px 0 0;
     max-width: 790px;
+    transition: $standard-transition;
 
     @include mediaQuery($breakpoint-750) {
       padding: 20px 15px;

@@ -47,8 +47,6 @@
             window.initializeParallax();
         }
 
-
-        //remove loading tiles
     })
 
     .fail(function() {

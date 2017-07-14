@@ -86,8 +86,8 @@ ul {
   opacity: .8; }
   @media screen and (max-width: 850px) {
     .parallax-foreground.foreground-play {
-      width: 68px;
-      height: 68px;
+      width: 65px;
+      height: 65px;
       right: 50%;
       transform: translateX(50%) scale(1); } }
   .parallax-foreground.foreground-play:hover {
@@ -190,7 +190,8 @@ i.fa.fa-play {
   border-radius: 4px;
   padding: 20px 60px;
   margin: 15px 0 0;
-  max-width: 790px; }
+  max-width: 790px;
+  transition: all 0.2s; }
   @media screen and (max-width: 750px) {
     .main-content__video {
       padding: 20px 15px; } }
