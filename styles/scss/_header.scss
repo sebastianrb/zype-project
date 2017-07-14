@@ -1,5 +1,11 @@
 .header {
     margin-bottom: 15%;
+    background: white;
+    box-shadow: $standard-box-shadow-outset;
+    @include mediaQuery($breakpoint-850) {
+        background: transparent;
+        box-shadow: none;
+    };
 }
 
 .header__title-container {

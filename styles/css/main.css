@@ -40,7 +40,13 @@ ul {
       max-width: none; } }
 
 .header {
-  margin-bottom: 15%; }
+  margin-bottom: 15%;
+  background: white;
+  box-shadow: 0 0 10px 0px rgba(128, 128, 128, 0.5); }
+  @media screen and (max-width: 850px) {
+    .header {
+      background: transparent;
+      box-shadow: none; } }
 
 .header__title-container {
   display: flex;
