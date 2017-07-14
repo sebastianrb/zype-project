@@ -19,7 +19,7 @@
         //get video thumbnails and titles
         for(var i = 0; i < videoArray.length; i++) {
             var title = videoArray[i].title;
-            var url = (i !== 1 ? videoArray[i].thumbnails[3].url : "./dest/images/placeholder-image.jpg");
+            var url = (i !== 1 ? videoArray[i].thumbnails[4].url : "./dest/images/placeholder-image.jpg");
 
             var listItem = `
                 <li class='main-content__video'>
