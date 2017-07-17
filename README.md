@@ -6,7 +6,7 @@
 
 * As stipulated in the project instructions, I use predominantly pure JavaScript and some jQuery (no other libraries, frameworks, or plugins)
 
-* The UI is fully responsive and works nicely on mobile devices
+* The design is original and developed from scratch
 
 * I completed this project using a Gulp-based workflow
 
