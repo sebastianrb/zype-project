@@ -240,7 +240,8 @@ i.fa.fa-play {
   font-weight: 800;
   line-height: 27px;
   color: #bd0404;
-  font-size: 1.05em; }
+  font-size: 1.05em;
+  margin-bottom: 0; }
 
 .top-button {
   height: 45px;

@@ -13,35 +13,33 @@
         var topButton = document.querySelector(".top-button");
         var topButtonOffset = 200;
 
-        //set parallax event handler on page scroll
+        //trigger parallax effect handler on page scroll
         window.addEventListener("scroll", parallax);
 
         function parallax(event) {
 
-            //get scroll amount
+            //get page scroll amount
             var scrolled = $(window).scrollTop();
-
-            //don't start parallax movement until user has scrolled to a specific video
 
             //get top offsets of each video
             var offsetObject = makeSectionOffsetObject(parallaxContainers);
 
             //apply parallax effect to relevant video on page scroll
+            //don't start parallax movement until user has scrolled to a specific video
             for(var i = 0; i < parallaxContainers.length; i++) {
                 if( offsetObject[i] - scrolled < scrollOffset && offsetObject[i] - scrolled > -parallaxUntil) {
-                    // $(parallaxContainers[i]).find(".parallax-background").css('top',((scrolled - $(parallaxContainers[i]).offset().top)*parallaxSpeed)+'px');
                     $(parallaxContainers[i]).find(".parallax-background").css('top', (($(parallaxContainers[i]).offset().top - scrolled) * parallaxSpeed) - factor +'px');
                 }
             }
 
-            //show top button at some scroll heights
+            //show top button only at some scroll heights
             if(scrolled > topButtonOffset) {
                 topButton.classList.add("shown");
             } else {
                 topButton.classList.remove("shown");
             }
 
-            //if user is at top of page, reset video top offsets to control for small discrepencies
+            //if user is at top of page, reset video top offsets to control for small discrepancies
             if(scrolled === 0) {
                 resetTops();
             }
@@ -55,6 +53,7 @@
         });
 
         //helper functions
+        //get video top offsets into an object so we know which videos should exhibit parallax effects
         function makeSectionOffsetObject(sections) {
             var offsetObject = {};
             sections.forEach( function(element, index) {

@@ -45,7 +45,6 @@
   border-radius: $standard-border-radius;
   cursor: pointer;
   transition: $standard-transition;
-  // display: none;
 
   &:hover {
     background: $zype-color;
@@ -73,6 +72,7 @@
     line-height: 27px;
     color: $error-color;
     font-size: 1.05em;
+    margin-bottom: 0;
 }
 
 
@@ -91,7 +91,6 @@
   z-index: 100;
   box-shadow: 1px 1px 2px 0 #d3d3d3;
   transition: all .3s;
-  // transform: translateX(100px);
   cursor: pointer;
 
   img {
@@ -100,7 +99,6 @@
 }
 
 .top-button.shown {
-  // transform: translateX(0);
   right: 30px;
 }
 
